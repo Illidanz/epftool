@@ -12,7 +12,7 @@ def parse_epf(path, dbname, c, id, function, multiple=False):
     dbfile = os.path.join(path, dbname)
     if not os.path.isfile(dbfile):
         print(dbfile, "file not found.")
-        return
+        return []
     positions = []
     if multiple:
         for row in c.execute("SELECT * FROM " + dbname + " WHERE id2=?", (id,)):
